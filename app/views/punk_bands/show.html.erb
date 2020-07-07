@@ -1,0 +1,8 @@
+<h1><%= @band.name %></h1>
+
+<p>Punk Level: <%= "🧷"*@band.punkiness %></p>
+
+<p><%= @band.poser ? "This band sold out. They now live in Los Angeles." : "This band is legit as heck, they showed up with a fake name and wrecked my hometown's battle of the bands by bringing in the most insane possible people six months ago. There's still a warrant out for their arrest. Rumor is they even got suspended." %></p>
+
+<p><%= button_to "Edit this Band", edit_punk_band_path(@band), method: :get %></p>
+<p><%= button_to "Break up this Band", @band, method: :delete %></p>

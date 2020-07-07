@@ -1,0 +1,6 @@
+<h1>THE ZINE</h1>
+<ul>
+<% @bands.each do |band| %>
+<li><%= link_to band.name, band %></li>
+<% end %>
+</ul>

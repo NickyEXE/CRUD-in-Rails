@@ -1,0 +1,23 @@
+<% if false %>
+
+    <%= form_for @band do |f| %>
+        <label for="name">Name:</label><br>
+        <%= f.text_field :name %><br>
+        <label for="punkiness">Punkiness:</label><br>
+        <%= f.number_field :punkiness %><br>
+        <label for="poser">Poser:</label><br>
+        <%= f.check_box :poser %><br>
+        <%= f.submit %>
+    <% end %>
+
+<% end %>
+
+    <%= form_with model: @band do |f| %>
+        <label for="name">Name:</label><br>
+        <%= f.text_field :name %><br>
+        <label for="punkiness">Punkiness:</label><br>
+        <%= f.number_field :punkiness %><br>
+        <label for="poser">Poser:</label><br>
+        <%= f.check_box :poser %><br>
+        <%= f.submit %>
+    <% end %>

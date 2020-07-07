@@ -1,0 +1,35 @@
+<h1>Register A New Band</h1>
+<h3>Have their names carved into the bathroom walls of punk rock history.</h3>
+
+
+<%# This is the old way, don't do this. %>
+
+<%# if false is a good tool for commenting out large blocks of erb%>
+<% if false %>
+<form action="/punk_bands" method="post">
+  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="punk_band[name]"><br>
+  <label for="punkiness">Punkiness:</label><br>
+  <input type="number" id="punkiness" name="punk_band[punkiness]"><br>
+  <label for="poser">Poser:</label><br>
+  <input type="checkbox" id="poser" name="punk_band[poser]"><br>
+  <input type="submit" value="Create Band">
+</form>
+
+
+<%# This is a form_tag. It is useful for non-restful forms.%>
+
+<%= form_tag "/punk_bands", method: :post %>
+  <label for="name">Name:</label><br>
+  <%= text_field_tag "punk_band[name]" %><br>
+  <label for="punkiness">Punkiness:</label><br>
+  <%= number_field_tag "punk_band[punkiness]"%><br>
+  <label for="poser">Poser:</label><br>
+  <%= check_box_tag "punk_band[poser]" %><br>
+<%= submit_tag "Create Band" %>
+<% end %>
+
+<%# This is the form_for: Use this or form_with for RESTful actions.%>
+
+<%= render 'form' %>
