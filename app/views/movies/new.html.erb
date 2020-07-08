@@ -1,0 +1,37 @@
+<h1>Add Your Movie To The Flatireon Collection</h1>
+
+<%# This is not the way we do things in Rails, please do not copy this into your code%>
+
+<% if false %>
+<form action="/movies" method="post">
+  <input type="hidden" id="authenticity_token" name="authenticity_token" value=<%= form_authenticity_token %>>
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="movie[title]"><br>
+  <label for="genre">Genre:</label><br>
+  <input type="text" id="genre" name="movie[genre]"><br><br>
+  <label for="rating">Rating:</label><br>
+  <input type="number" id="rating" name="movie[rating]"><br><br>
+  <label for="good">Good:</label><br>
+  <input type="checkbox" id="checkbox" name="movie[good]" value="1"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<%# Form tag is most useful for when we aren't using the form to build something we have a model for in our database%>
+
+<h1>Form Tag</h1>
+<%= form_tag '/movies', method: :post %>
+  <label for="title">Title:</label><br>
+  <%= text_field_tag 'movie[title]' %><br>
+  <label for="genre">Genre:</label><br>
+  <%= text_field_tag 'movie[genre]'%><br>
+  <label for="rating">Rating:</label><br>
+  <%= number_field_tag 'movie[rating]'%><br>
+  <label for="good">Good:</label><br>
+  <%= check_box_tag 'movie[good]' %><br>
+<%= submit_tag %>
+
+<% end %>
+
+<h1>Form For</h1>
+
+<%= render 'form' %>

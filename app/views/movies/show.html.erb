@@ -1,0 +1,7 @@
+<h1><%= @movie.title %></h1>
+<h3><%= @movie.genre %></h3>
+<p>Our Rating: <%= "👍"*@movie.rating %>
+
+<p>Our Take: <%= @movie.good ? "A breathtaking masterpiece of endless brilliance" : "What were they thinking. The studio that filmed this should be burned down." %></p>
+<%= button_to 'Edit this Movie', edit_movie_path(@movie), method: :get %>
+<%= button_to 'Remove this Movie', @movie, method: :delete %>

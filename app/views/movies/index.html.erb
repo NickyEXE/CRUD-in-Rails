@@ -1,0 +1,11 @@
+<h1>The Greatest Movie Ranking Website of All Time</h1>
+<h3>Carefully Curated by Flatiron Students</h3>
+
+<ul>
+<% @movies.each do |movie| %>
+    <li><%= link_to movie.title, movie %></li>
+<% end %>
+</ul>
+
+<%= link_to "See all Movies", movies_path %> |
+<%= link_to "Create a Movie", new_movie_path %>
