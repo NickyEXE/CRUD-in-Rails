@@ -1,9 +1,9 @@
 <%= form_for @movie do |f| %>
-    <label for="title">Title:</label><br>
+    <%= f.label :title %><br>
     <%= f.text_field :title %><br>
-    <label for="genre">Genre:</label><br>
+    <%= f.label :genre %><br>
     <%= f.text_field :genre %><br>
-    <label for="rating">Rating:</label><br>
+    <%= f.label :rating %><br>
     <%= f.number_field :rating %><br>
     <%= f.submit %>
 <% end %>
